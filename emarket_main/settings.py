@@ -34,7 +34,8 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['waleedMRT.pythonanywhere.com', '127.0.0.1', 'localhost']
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Application definition
