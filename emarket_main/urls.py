@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path , include
 from rest_framework_simplejwt.views import TokenObtainPairView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +28,7 @@ urlpatterns = [
     path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # errors
 handler404 = 'emarket_main.views.custom_404'

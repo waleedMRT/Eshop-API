@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 import environ
 import cloudinary
+import os 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -155,13 +156,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-# Email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = '7f6ba250e925ce'
-EMAIL_HOST_PASSWORD = 'a8884e3ec6dafd'
-EMAIL_PORT = '2525'
-DEFAULT_FROM_EMAIL = 'noreply@test.com'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 

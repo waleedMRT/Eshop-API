@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
+# from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -19,7 +19,8 @@ class Product(models.Model):
     rating_num = models.IntegerField(default=0)
     category = models.ForeignKey(Category , on_delete=models.SET_NULL , null=True )
     user = models.ForeignKey(User , on_delete=models.CASCADE)
-    image = CloudinaryField('image' , null=True , blank=True)
+    # image = CloudinaryField('image' , null=True , blank=True)
+    image = models.ImageField(upload_to='products/', blank=True, null=True)
 
     def __str__(self):
         return self.name
